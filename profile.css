@@ -1,0 +1,215 @@
+/* Основные стили */
+body {
+    color: azure;
+    background-image: url('img/фон.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+    font-size: 28px;
+}
+
+/* Меню */
+.menu-container {
+    padding: 10px 0;
+    background-color: black;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid red;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-logo {
+    width: 150px;
+    height: auto;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu a:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+.menu a.active {
+    font-weight: bold;
+}
+
+#logout-btn {
+    padding: 8px 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+/* Стили для отображения логина */
+#login-display {
+    color: red; /* Красный цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    margin-right: 10px;
+}
+
+#logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Стили для теста */
+main {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: white;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question label {
+    font-size: 18px;
+}
+
+.result {
+    margin-top: 10px;
+    font-size: 16px;
+    color: yellow;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    border-top: 2px solid red;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+.footer-phone,
+.footer-rights {
+    font-size: 14px;
+}
+
+.footer-phone p,
+.footer-rights p {
+    margin: 0;
+}
+
+.footer-rights {
+    text-align: right;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu-container {
+        width: 100%;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .menu-logo {
+        width: 40%;
+        max-width: 200px;
+        margin: 10px auto;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-covers {
+        width: 100%;
+        align-items: center;
+    }
+
+    .description {
+        width: 100%;
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Словарь - Убийство в восточном экспрессе</title>
+    <link rel="stylesheet" href="dictionary.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="menu-container">
+        <ul class="menu">
+            <img src="img/лого.png" alt="Logo" class="menu-logo">
+            <li><a href="description.html">Описание</a></li>
+            <li><a href="dictionary.html" class="active">Словарь</a></li>
+            <li><a href="gallery.html">Галерея</a></li>
+            <li><a href="test.html">Тест</a></li>
+            <li><a href="profile.html">Личный кабинет</a></li>
+            <p id="login-display"></p> <!-- Место для отображения логина -->
+            <button id="logout-btn">Выйти</button>
+        </ul>    
+    </div>
+    
+    <section class="dictionary">
+        <div class="description">
+            <h2>Словарь</h2>
+            <p>Нажмите на слово слева, чтобы увидеть его определение.</p>
+            <div class="search-container">
+                <input type="text" class="search-bar" id="searchInput" placeholder="Поиск по словарю...">
+                <button onclick="searchWords()" class="search-btn">Поиск</button>
+                <button onclick="resetSearch()" class="reset-btn">Сбросить</button>
+            </div>
+        </div>
+    
+        <div class="dictionary-container">
+            <div class="word-list" id="wordList">
+                <ul>
+                    <li onclick="showDefinition('Пуаро')">Пуаро</li>
+                    <li onclick="showDefinition('Восточный экспресс')">Восточный экспресс</li>
+                    <li onclick="showDefinition('Рэтчетт')">Рэтчетт</li>
+                    <li onclick="showDefinition('Бук')">Бук</li>
+                    <li onclick="showDefinition('Графиня Андрени')">Графиня Андрени</li>
+                    <li onclick="showDefinition('Мисс Дебенхэм')">Мисс Дебенхэм</li>
+                    <li onclick="showDefinition('Арбатнот')">Арбатнот</li>
+                    <li onclick="showDefinition('Кондуктор')">Кондуктор</li>
+                    <li onclick="showDefinition('Хардмен')">Хардмен</li>
+                    <li onclick="showDefinition('Губта')">Губта</li>
+                </ul>
+            </div>
+            <div class="definition">
+                <h3>Определение</h3>
+                <p id="word-definition">Выберите слово для отображения определения.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://t.me/your_channel" target="_blank" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://youtube.com" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-phone">
+                <p>Телефон: +7 (800) 555-35-35</p>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2024 Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="dictionary.js"></script>
+    <script src="globalMenu.js" defer></script>
+</body>
+</html>

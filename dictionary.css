@@ -1,0 +1,275 @@
+/* Основные стили */
+body {
+    color: azure;
+    background-image: url('img/фон.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu-container {
+    padding: 10px 0;
+    background-color: black; /* Черный фон для шапки */
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid red; /* Красная линия внизу */
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-logo {
+    width: 20%;
+    max-width: 150px;
+    height: auto;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu a:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+.menu a.active {
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: font-size 0.3s ease;
+}
+/* Стили для отображения логина */
+#login-display {
+    color: red; /* Красный цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    margin-right: 10px;
+}
+
+/* Стиль кнопки выхода */
+#logout-btn {
+    padding: 8px 15px;
+    background-color: #f44336; /* Красный цвет */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Основная часть словаря */
+.dictionary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.dictionary-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.word-list {
+    flex: 1;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    max-height: 400px;
+    overflow-y: auto; /* Прокрутка при большом списке */
+}
+
+.word-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.word-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #333;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.word-list li:hover {
+    background: red;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Определение */
+.definition {
+    flex: 2;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 250px; /* Фиксированная высота */
+    overflow-y: auto; /* Прокрутка, если содержимое не помещается */
+    box-sizing: border-box; /* Включает padding в расчет высоты */
+}
+
+.definition h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.definition p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+    margin: 0;
+}
+
+/* Поле поиска */
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.search-bar {
+    flex: 2;
+    padding: 10px;
+    border: 2px solid red;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #222;
+    color: white;
+}
+
+.search-btn,
+.reset-btn {
+    padding: 10px 15px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover,
+.reset-btn:hover {
+    background-color: darkred;
+}
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid red;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.footer-social a:hover {
+    opacity: 0.7;
+}
+
+.footer-phone {
+    color: white;
+    font-size: 16px;
+}
+
+.footer-rights {
+    text-align: right;
+    font-size: 14px;
+}
+
+.footer-phone p,
+.footer-rights p {
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-social {
+        margin-bottom: 10px;
+    }
+
+    .footer-phone,
+    .footer-rights {
+        margin-bottom: 10px;
+    }
+
+    .dictionary-container {
+        flex-direction: column;
+    }
+
+    .definition,
+    .word-list {
+        width: 100%;
+        max-height: none;
+    }
+}

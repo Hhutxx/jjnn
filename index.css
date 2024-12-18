@@ -1,0 +1,140 @@
+body {
+    color: #d4c2a5;
+    background: url('img/фон.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#auth_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
+    max-width: 400px;
+    width: 90%;
+}
+
+#logo img {
+    max-width: 180px;
+    margin-bottom: 15px;
+}
+
+form {
+    background-color: rgba(30, 30, 30, 0);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    color: #d4c2a5;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 6px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+}
+
+input[type="text"], input[type="date"] {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 14px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #b03030;
+    box-shadow: 0 0 5px rgba(176, 48, 48, 0.6);
+}
+
+button {
+    background-color: #b03030;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    padding: 12px;
+}
+
+button:hover {
+    background-color: #7d2222;
+    transform: translateY(-2px);
+}
+
+/* Гендерные радио-кнопки */
+.gender-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+div input[type="radio"] {
+    margin-right: 6px;
+}
+
+div label {
+    margin-right: 15px;
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #auth_div {
+        padding: 15px;
+        max-width: 350px;
+    }
+    form {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+}
+
+
+/* Стили для полей ввода */
+#login, #date {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 14px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+}
+
