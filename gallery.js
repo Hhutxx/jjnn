@@ -6,16 +6,26 @@ const images = [
     "img/slide5.jpg"
 ];
 
+const captions = [
+    "Обложка",
+    "Красивая картинка",
+    "Сцена раследования",
+    "Основные персонажи",
+    "Просто картинка"
+];
+
 let currentSlideIndex = 0;
 
 const imageElement = document.getElementById("gallery-image");
 const slideInfoElement = document.getElementById("slide-info");
+const captionElement = document.getElementById("slide-caption");
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
 function updateGallery() {
     imageElement.src = images[currentSlideIndex];
     slideInfoElement.textContent = `${currentSlideIndex + 1} слайд из ${images.length}`;
+    captionElement.textContent = captions[currentSlideIndex];
     prevButton.disabled = currentSlideIndex === 0;
     nextButton.disabled = currentSlideIndex === images.length - 1;
 }
@@ -34,13 +44,10 @@ nextButton.addEventListener("click", () => {
     }
 });
 
-
 updateGallery();
 
-document.addEventListener('DOMContentLoaded', function() {
-
+document.addEventListener('DOMContentLoaded', function () {
     const login = localStorage.getItem('login');
-
 
     if (login) {
         document.getElementById('login-display').innerText = `Логин: ${login}`;
@@ -48,10 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('login-display').innerText = 'Логин: Неизвестно';
     }
 
-
     const logoutButton = document.getElementById('logout-btn');
-    logoutButton.addEventListener('click', function() {
+    logoutButton.addEventListener('click', function () {
         localStorage.clear();
-        window.location.href = 'index.html'; 
+        window.location.href = 'index.html';
     });
 });
