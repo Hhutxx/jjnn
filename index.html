@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -12,26 +12,30 @@
 <body class="light">
     <div id="auth_div">
         <div id="logo">
-            <img src="img/лого.png" alt="Логотип" />
+            <img src="img/лого.png" alt="Логотип">
         </div>
 
-        <form id="auth_form">
+        <form id="auth_form" method="POST" action="#">
             <label for="login">Логин</label>
-            <input type="text" id="login" name="login" required placeholder="Введите логин">
-        
+            <input class="text" id="login" name="login" placeholder="Введите логин" required 
+                pattern="^[а-яА-ЯёЁ0-9]{4,10}$" 
+                title="Логин должен содержать от 4 до 10 символов: только русские буквы и цифры">
+
             <label for="date">Дата рождения</label>
-            <input type="date" id="date" name="dateOfBirth" required max="" placeholder="Выберите дату рождения">
-        
-            <label for="gender">Пол</label>
-            <input type="radio" id="male" name="gender" value="male" required>
-            <label for="male">Мужской</label>
-            <input type="radio" id="female" name="gender" value="female" required>
-            <label for="female">Женский</label>
-        
+            <input class="date" id="date" name="date" placeholder="Дата рождения" type="date" min="1950-01-01" required>
+
+            <label>Пол</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Мужской</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Женский</label>
+            </div>
+
             <button type="submit">Войти</button>
         </form>
-        
     </div>
+
     <script src="index.js"></script>
     <script src="globalMenu.js" defer></script>
 </body>

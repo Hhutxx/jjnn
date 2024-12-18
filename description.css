@@ -14,10 +14,10 @@ body {
 
 .menu-container {
     padding: 10px 0;
-    background-color: black; /* Черный фон для шапки */
+    background-color: black; 
     width: 100%;
     margin-bottom: 20px;
-    border-bottom: 2px solid red; /* Красная линия внизу */
+    border-bottom: 2px solid red; 
 }
 
 .menu {
@@ -61,16 +61,16 @@ body {
 
 /* Стили для отображения логина */
 #login-display {
-    color: red; /* Красный цвет текста */
-    font-size: 18px; /* Размер шрифта */
-    font-weight: bold; /* Жирное начертание */
+    color: red; 
+    font-size: 18px;
+    font-weight: bold; 
     margin-right: 10px;
 }
 
 /* Стиль кнопки выхода */
 #logout-btn {
     padding: 8px 15px;
-    background-color: #f44336; /* Красный цвет */
+    background-color: #f44336; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -93,12 +93,12 @@ body {
 .book-covers {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Меньше отступы между обложками */
+    gap: 10px; 
     width: 30%;
 }
 
 .book-cover {
-    max-width: 50%; /* Уменьшены размеры обложек */
+    max-width: 50%; 
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -106,8 +106,8 @@ body {
 
 .description {
     padding: 20px;
-    background-color: black; /* Черный фон */
-    color: white; /* Белый текст */
+    background-color: black; 
+    color: white; 
     border-radius: 10px;
     width: 65%;
     margin-left: 20px;

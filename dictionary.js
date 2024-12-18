@@ -25,38 +25,38 @@ function searchWords() {
     for (let i = 0; i < words.length; i++) {
         const wordText = words[i].textContent.toLowerCase();
         if (wordText.includes(searchInput)) {
-            words[i].style.display = 'block'; // Показываем слово, если оно соответствует запросу
+            words[i].style.display = 'block'; 
         } else {
-            words[i].style.display = 'none'; // Скрываем слово, если оно не соответствует запросу
+            words[i].style.display = 'none'; 
         }
     }
 }
 
 function resetSearch() {
-    document.getElementById('searchInput').value = ''; // Очистка поля поиска
+    document.getElementById('searchInput').value = ''; 
     const wordList = document.getElementById('wordList');
     const words = wordList.getElementsByTagName('li');
 
     for (let i = 0; i < words.length; i++) {
-        words[i].style.display = 'block'; // Показываем все слова после сброса
+        words[i].style.display = 'block'; 
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Получаем логин из localStorage
+
     const login = localStorage.getItem('login');
 
-    // Если логин есть, отображаем его
+
     if (login) {
         document.getElementById('login-display').innerText = `Логин: ${login}`;
     } else {
         document.getElementById('login-display').innerText = 'Логин: Неизвестно';
     }
 
-    // Обработчик для выхода
+
     const logoutButton = document.getElementById('logout-btn');
     logoutButton.addEventListener('click', function() {
         localStorage.clear();
-        window.location.href = 'index.html'; // Перенаправление на главную страницу
+        window.location.href = 'index.html'; 
     });
 });

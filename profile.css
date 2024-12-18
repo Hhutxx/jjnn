@@ -76,9 +76,9 @@ h2 {
 }
 /* Стили для отображения логина */
 #login-display {
-    color: red; /* Красный цвет текста */
-    font-size: 18px; /* Размер шрифта */
-    font-weight: bold; /* Жирное начертание */
+    color: red; 
+    font-size: 18px; 
+    font-weight: bold; 
     margin-right: 10px;
 }
 

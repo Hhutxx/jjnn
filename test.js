@@ -12,7 +12,7 @@ document.getElementById("test-form").addEventListener("submit", function (event)
     const formData = new FormData(event.target);
     let score = 0;
 
-    // Проверка ответов
+
     for (const [question, userAnswer] of formData.entries()) {
         const correctAnswer = correctAnswers[question];
         const resultElement = document.getElementById(`result-${question}`);
@@ -27,29 +27,29 @@ document.getElementById("test-form").addEventListener("submit", function (event)
         }
     }
 
-    // Отображение итогового результата
+
     const finalResult = document.getElementById("final-result");
     finalResult.textContent = `Ваш результат: ${score} из 6`;
 
-    // Сохранение результата в localStorage
+
     localStorage.setItem("testResult", `Ваш результат: ${score} из 6`);
 
-    // Показать кнопку для повторного прохождения теста
+
     const restartButton = document.getElementById("restart-btn");
-    restartButton.style.display = "inline-block";  // Показать кнопку
+    restartButton.style.display = "inline-block";  
 });
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Получаем логин из localStorage
+
     const username = localStorage.getItem("login");
 
-    // Отображаем логин в красном цвете
+
     document.getElementById("login-display").innerText = `Логин: ${username || "Неизвестно"}`;
 
     const logoutButton = document.getElementById('logout-btn');
     logoutButton.addEventListener('click', function() {
         localStorage.clear();
-        window.location.href = 'index.html'; // Перенаправление на главную страницу
+        window.location.href = 'index.html'; 
     });
 });
