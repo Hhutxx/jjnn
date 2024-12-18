@@ -4,52 +4,59 @@ const correctAnswers = {
     question3: "Нож",
     question4: "12",
     question5: "Зависть",
-    question6: "Восточный экспресс"
+    question6: "Поезд"
 };
 
-document.getElementById("test-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    let score = 0;
-
-
-    for (const [question, userAnswer] of formData.entries()) {
-        const correctAnswer = correctAnswers[question];
-        const resultElement = document.getElementById(`result-${question}`);
-        
-        if (String(userAnswer).trim().toLowerCase() === String(correctAnswer).toLowerCase()) {
-            resultElement.textContent = "Правильно!";
-            resultElement.style.color = "green";
-            score++;
-        } else {
-            resultElement.textContent = `Неправильно. Правильный ответ: ${correctAnswer}`;
-            resultElement.style.color = "red";
-        }
-    }
-
-
+document.addEventListener("DOMContentLoaded", function () {
+    const testForm = document.getElementById("test-form");
     const finalResult = document.getElementById("final-result");
-    finalResult.textContent = `Ваш результат: ${score} из 6`;
-
-
-    localStorage.setItem("testResult", `Ваш результат: ${score} из 6`);
-
-
     const restartButton = document.getElementById("restart-btn");
-    restartButton.style.display = "inline-block";  
-});
 
+    testForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Останавливаем стандартное поведение
 
-document.addEventListener('DOMContentLoaded', function() {
+        const formData = new FormData(testForm);
+        let score = 0;
 
+        // Проверяем ответы
+        for (const [question, userAnswer] of formData.entries()) {
+            const correctAnswer = correctAnswers[question];
+            const resultElement = document.getElementById(`result-${question}`);
+            
+            if (!resultElement) continue;
+
+            if (String(userAnswer).trim().toLowerCase() === String(correctAnswer).toLowerCase()) {
+                resultElement.textContent = "Правильно!";
+                resultElement.style.color = "green";
+                score++;
+            } else {
+                resultElement.textContent = `Неправильно. Правильный ответ: ${correctAnswer}`;
+                resultElement.style.color = "red";
+            }
+        }
+
+        // Отображаем результат
+        finalResult.textContent = `Ваш результат: ${score} из ${Object.keys(correctAnswers).length}`;
+        localStorage.setItem("testResult", `Ваш результат: ${score} из ${Object.keys(correctAnswers).length}`);
+        restartButton.style.display = "inline-block"; // Показываем кнопку "Пройти тест снова"
+    });
+
+    // Логика кнопки "Пройти тест снова"
+    restartButton.addEventListener("click", function () {
+        testForm.reset();
+        document.querySelectorAll(".result").forEach((el) => (el.textContent = ""));
+        finalResult.textContent = "";
+        restartButton.style.display = "none";
+    });
+
+    // Отображение логина
     const username = localStorage.getItem("login");
-
-
     document.getElementById("login-display").innerText = `Логин: ${username || "Неизвестно"}`;
 
-    const logoutButton = document.getElementById('logout-btn');
-    logoutButton.addEventListener('click', function() {
+    // Логика кнопки "Выйти"
+    const logoutButton = document.getElementById("logout-btn");
+    logoutButton.addEventListener("click", function () {
         localStorage.clear();
-        window.location.href = 'index.html'; 
+        window.location.href = "index.html";
     });
 });
