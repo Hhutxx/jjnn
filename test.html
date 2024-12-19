@@ -28,7 +28,7 @@
             <div class="question">
                 <label>1. Кто является главным сыщиком в "Убийстве в Восточном экспрессе"?</label>
                 <div>
-                    <input type="radio" name="question1" value="Шерлок Холмс" required> Шерлок Холмс<br>
+                    <input type="radio" name="question1" value="Шерлок Холмс"> Шерлок Холмс<br>
                     <input type="radio" name="question1" value="Эркюль Пуаро"> Эркюль Пуаро<br>
                     <input type="radio" name="question1" value="Мисс Марпл"> Мисс Марпл<br>
                     <input type="radio" name="question1" value="Филипп Марлоу"> Филипп Марлоу<br>
@@ -38,14 +38,14 @@
 
             <div class="question">
                 <label>2. Назовите имя жертвы, убитой в Восточном экспрессе.</label>
-                <input type="text" name="question2" required pattern="[А-Яа-я\s]+" title="Используйте только русские буквы.">
+                <input type="text" name="question2" pattern="[А-Яа-я\s]+" title="Используйте только русские буквы.">
                 <div class="result" id="result-question2"></div>
             </div>
 
             <div class="question">
                 <label>3. Какой предмет был использован для убийства?</label>
                 <div>
-                    <input type="radio" name="question3" value="Нож" required> Нож<br>
+                    <input type="radio" name="question3" value="Нож"> Нож<br>
                     <input type="radio" name="question3" value="Яд"> Яд<br>
                     <input type="radio" name="question3" value="Удушение"> Удушение<br>
                     <input type="radio" name="question3" value="Пистолет"> Пистолет<br>
@@ -55,14 +55,14 @@
 
             <div class="question">
                 <label>4. Укажите, сколько пассажиров было на борту Восточного экспресса во время убийства.</label>
-                <input type="number" name="question4" required min="0" max="20">
+                <input type="number" name="question4" min="0" max="20">
                 <div class="result" id="result-question4"></div>
             </div>
 
             <div class="question">
                 <label>5. Какой мотив у большинства подозреваемых в убийстве?</label>
                 <div>
-                    <input type="radio" name="question5" value="Месть" required> Месть<br>
+                    <input type="radio" name="question5" value="Месть"> Месть<br>
                     <input type="radio" name="question5" value="Деньги"> Деньги<br>
                     <input type="radio" name="question5" value="Семейные узы"> Семейные узы<br>
                     <input type="radio" name="question5" value="Зависть"> Зависть<br>
@@ -72,7 +72,7 @@
 
             <div class="question">
                 <label>6. Какой транспорт использовался для путешествия, в котором произошло убийство?</label>
-                <input type="text" name="question6" required pattern="[А-Яа-я\s]+" title="Используйте только русские буквы.">
+                <input type="text" name="question6" pattern="[А-Яа-я\s]+" title="Используйте только русские буквы.">
                 <div class="result" id="result-question6"></div>
             </div>
 
@@ -81,7 +81,6 @@
         
         <div id="final-result"></div>
         
-
         <button id="restart-btn" style="display: none;">Пройти тест снова</button>
     </main>
     

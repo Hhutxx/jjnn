@@ -17,27 +17,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formData = new FormData(testForm);
         let score = 0;
+        let totalQuestions = 0;
 
         // Проверяем ответы
-        for (const [question, userAnswer] of formData.entries()) {
+        for (const question in correctAnswers) {
+            const userAnswer = formData.get(question); // Получаем ответ пользователя
             const correctAnswer = correctAnswers[question];
             const resultElement = document.getElementById(`result-${question}`);
             
             if (!resultElement) continue;
 
-            if (String(userAnswer).trim().toLowerCase() === String(correctAnswer).toLowerCase()) {
-                resultElement.textContent = "Правильно!";
-                resultElement.style.color = "green";
-                score++;
+            // Учитываем только заполненные поля
+            if (userAnswer) {
+                totalQuestions++;
+                if (String(userAnswer).trim().toLowerCase() === String(correctAnswer).toLowerCase()) {
+                    resultElement.textContent = "Правильно!";
+                    resultElement.style.color = "green";
+                    score++;
+                } else {
+                    resultElement.textContent = `Неправильно. Правильный ответ: ${correctAnswer}`;
+                    resultElement.style.color = "red";
+                }
             } else {
-                resultElement.textContent = `Неправильно. Правильный ответ: ${correctAnswer}`;
-                resultElement.style.color = "red";
+                resultElement.textContent = "";
             }
         }
 
         // Отображаем результат
-        finalResult.textContent = `Ваш результат: ${score} из ${Object.keys(correctAnswers).length}`;
-        localStorage.setItem("testResult", `Ваш результат: ${score} из ${Object.keys(correctAnswers).length}`);
+        finalResult.textContent = `Ваш результат: ${score} из ${totalQuestions}`;
+        localStorage.setItem("testResult", `Ваш результат: ${score} из ${totalQuestions}`);
         restartButton.style.display = "inline-block"; // Показываем кнопку "Пройти тест снова"
     });
 
