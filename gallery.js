@@ -23,11 +23,28 @@ const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
 function updateGallery() {
-    imageElement.src = images[currentSlideIndex];
-    slideInfoElement.textContent = `${currentSlideIndex + 1} слайд из ${images.length}`;
-    captionElement.textContent = captions[currentSlideIndex];
-    prevButton.disabled = currentSlideIndex === 0;
-    nextButton.disabled = currentSlideIndex === images.length - 1;
+    // Добавляем анимацию исчезновения
+    imageElement.classList.add("fade-out");
+
+    // Ожидаем завершения анимации исчезновения
+    setTimeout(() => {
+        imageElement.src = images[currentSlideIndex];
+        captionElement.textContent = captions[currentSlideIndex];
+        slideInfoElement.textContent = `${currentSlideIndex + 1} слайд из ${images.length}`;
+
+        // Отключаем кнопки, если это первый или последний слайд
+        prevButton.disabled = currentSlideIndex === 0;
+        nextButton.disabled = currentSlideIndex === images.length - 1;
+
+        // Убираем анимацию исчезновения и добавляем анимацию появления
+        imageElement.classList.remove("fade-out");
+        imageElement.classList.add("fade-in");
+
+        // Убираем класс fade-in после завершения анимации
+        setTimeout(() => {
+            imageElement.classList.remove("fade-in");
+        }, 500); // Время анимации совпадает с CSS (0.5s)
+    }, 500); // Время анимации совпадает с CSS (0.5s)
 }
 
 prevButton.addEventListener("click", () => {

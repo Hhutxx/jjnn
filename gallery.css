@@ -59,6 +59,7 @@ h2 {
     color: red;
     transform: scale(1.1);
 }
+
 /* Стили для отображения логина */
 #login-display {
     color: red; 
@@ -67,11 +68,11 @@ h2 {
     margin-right: 10px;
 }
 
-
 .menu a.active {
     font-weight: bold;
 }
 
+/* Стиль кнопки выхода */
 #logout-btn {
     padding: 8px 15px;
     background-color: #f44336; 
@@ -81,6 +82,7 @@ h2 {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    margin-right: 20px;
 }
 
 #logout-btn:hover {
@@ -148,6 +150,33 @@ button:disabled {
     color: white; 
     font-size: 24px; 
     text-align: center;
+}
+
+/* Анимация затухания */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Footer */
