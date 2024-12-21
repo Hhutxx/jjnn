@@ -4,28 +4,51 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('date').setAttribute('max', dateHtml);
 
     const authForm = document.getElementById('auth_form');
-    const errorMessage = document.getElementById('error-message');
+    const loginError = document.getElementById('login-error');
+    const dateError = document.getElementById('date-error');
+    const genderError = document.getElementById('gender-error');
 
     authForm.addEventListener('submit', function (event) {
-
         event.preventDefault();
 
-        if (!authForm.checkValidity()) {
-            errorMessage.style.display = 'block'; 
-            return;
+
+        loginError.style.display = 'none';
+        dateError.style.display = 'none';
+        genderError.style.display = 'none';
+
+
+        const login = document.getElementById('login').value.trim();
+        const dateOfBirth = document.getElementById('date').value;
+        const gender = document.querySelector('input[name="gender"]:checked');
+
+        let valid = true;
+
+
+        if (!/^[а-яА-ЯёЁ0-9]{4,10}$/.test(login)) {
+            loginError.style.display = 'block';
+            valid = false;
         }
 
 
-        errorMessage.style.display = 'none';
+        if (!dateOfBirth) {
+            dateError.style.display = 'block';
+            valid = false;
+        }
 
 
-        const login = document.getElementById('login').value;
-        const dateOfBirth = document.getElementById('date').value;
-        const gender = document.querySelector('input[name="gender"]:checked').value;
+        if (!gender) {
+            genderError.style.display = 'block';
+            valid = false;
+        }
+
+        if (!valid) {
+            return; 
+        }
+
 
         localStorage.setItem('login', login);
         localStorage.setItem('dateOfBirth', dateOfBirth);
-        localStorage.setItem('gender', gender);
+        localStorage.setItem('gender', gender.value);
 
 
         window.location.href = 'description.html';

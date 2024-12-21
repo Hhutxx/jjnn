@@ -13,23 +13,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const restartButton = document.getElementById("restart-btn");
 
     testForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Останавливаем стандартное поведение
+        event.preventDefault(); 
 
         const formData = new FormData(testForm);
         let score = 0;
-        let totalQuestions = 0;
+        let totalQuestions = Object.keys(correctAnswers).length;
 
-        // Проверяем ответы
+
         for (const question in correctAnswers) {
-            const userAnswer = formData.get(question); // Получаем ответ пользователя
+            const userAnswer = formData.get(question); 
             const correctAnswer = correctAnswers[question];
             const resultElement = document.getElementById(`result-${question}`);
             
             if (!resultElement) continue;
 
-            // Учитываем только заполненные поля
             if (userAnswer) {
-                totalQuestions++;
                 if (String(userAnswer).trim().toLowerCase() === String(correctAnswer).toLowerCase()) {
                     resultElement.textContent = "Правильно!";
                     resultElement.style.color = "green";
@@ -39,17 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     resultElement.style.color = "red";
                 }
             } else {
-                resultElement.textContent = "";
+                resultElement.textContent = `Не заполнено. Правильный ответ: ${correctAnswer}`;
+                resultElement.style.color = "red";
             }
         }
 
-        // Отображаем результат
+
         finalResult.textContent = `Ваш результат: ${score} из ${totalQuestions}`;
         localStorage.setItem("testResult", `Ваш результат: ${score} из ${totalQuestions}`);
-        restartButton.style.display = "inline-block"; // Показываем кнопку "Пройти тест снова"
+        restartButton.style.display = "inline-block"; 
     });
 
-    // Логика кнопки "Пройти тест снова"
     restartButton.addEventListener("click", function () {
         testForm.reset();
         document.querySelectorAll(".result").forEach((el) => (el.textContent = ""));
@@ -57,14 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
         restartButton.style.display = "none";
     });
 
-    // Отображение логина
     const username = localStorage.getItem("login");
     document.getElementById("login-display").innerText = `Логин: ${username || "Неизвестно"}`;
 
-    // Логика кнопки "Выйти"
     const logoutButton = document.getElementById("logout-btn");
     logoutButton.addEventListener("click", function () {
         localStorage.clear();
-        window.location.href = "index.html";
+        window.location.href = "index.html"; 
     });
 });

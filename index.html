@@ -16,42 +16,56 @@
         </div>
 
         <form id="auth_form" method="POST" action="description.html" novalidate>
-            <label for="login">Логин</label>
-            <input 
-                class="text" 
-                id="login" 
-                name="login" 
-                placeholder="Введите логин" 
-                required 
-                pattern="^[а-яА-ЯёЁ0-9]{4,10}$" 
-                title="Логин должен содержать от 4 до 10 символов: только русские буквы и цифры"
-            >
 
-            <label for="date">Дата рождения</label>
-            <input 
-                class="date" 
-                id="date" 
-                name="date" 
-                placeholder="Дата рождения" 
-                type="date" 
-                min="1950-01-01" 
-                required
-            >
+            <div class="form-group">
+                <label for="login">Логин</label>
+                <input 
+                    class="text" 
+                    id="login" 
+                    name="login" 
+                    placeholder="Введите логин" 
+                    required 
+                    pattern="^[а-яА-ЯёЁ0-9]{4,10}$" 
+                    title="Логин должен содержать от 4 до 10 символов: только русские буквы и цифры"
+                >
+                <div class="error-message" id="login-error" style="color: red; display: none;">
+                    Логин должен содержать от 4 до 10 символов: только русские буквы и цифры.
+                </div>
+            </div>
 
-            <label>Пол</label>
-            <div>
-                <input type="radio" id="male" name="gender" value="male" required>
-                <label for="male">Мужской</label>
-                <input type="radio" id="female" name="gender" value="female" required>
-                <label for="female">Женский</label>
+
+            <div class="form-group">
+                <label for="date">Дата рождения</label>
+                <input 
+                    class="date" 
+                    id="date" 
+                    name="date" 
+                    placeholder="Дата рождения" 
+                    type="date" 
+                    min="1950-01-01" 
+                    required
+                >
+                <div class="error-message" id="date-error" style="color: red; display: none;">
+                    Укажите корректную дату рождения.
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Пол</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Мужской</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Женский</label>
+                </div>
+                <div class="error-message" id="gender-error" style="color: red; display: none;">
+                    Пожалуйста, выберите пол.
+                </div>
             </div>
 
             <button type="submit">Войти</button>
         </form>
-
-        <div id="error-message" style="color: red; display: none; margin-top: 10px;">
-            Пожалуйста, заполните все поля формы корректно!
-        </div>
     </div>
 
     <script src="index.js" defer></script>
